@@ -80,3 +80,25 @@ const display = () => {
 }
 
 const op = Btn.addEventListener('click', display);
+
+
+
+//Write a function processArray that takes an array and a callback function as parameters. 
+//The function should apply the callback function to each element of the array and return a new array with the results. 
+//Use an anonymous function as the callback to double each number in the array.
+
+function processArray(arr, callback) {
+    const result = [];
+    for (const element of arr) {
+        result.push(callback(element));
+    }
+    return result;
+}
+
+
+const originalArray = [1, 2, 3, 4, 5];
+const doubledArray = processArray(originalArray, (num) => num * 2);
+
+const ans4out = document.getElementById('Ans4Answer');
+ans4out.innerHTML= doubledArray ;
+
